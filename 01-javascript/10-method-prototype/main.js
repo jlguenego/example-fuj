@@ -2,6 +2,8 @@ function Person(name) {
     this.name = name;
 }
 
+// A function is an object with a prototype property.
+
 console.log('Person %O', Person);
 
 Person.prototype.talk = function() {
