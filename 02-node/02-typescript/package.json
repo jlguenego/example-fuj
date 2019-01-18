@@ -12,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^10.12.18",
-    "typescript": "^3.2.4"
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.4",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   }
 }
