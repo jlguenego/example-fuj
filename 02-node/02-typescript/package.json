@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/node": "^10.12.18",
     "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
     "typescript": "^3.2.4",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
