@@ -7,6 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { CreateTicketComponent } from './route/create-ticket/create-ticket.component';
 import { ListTicketComponent } from './route/list-ticket/list-ticket.component';
 import { HomeComponent } from './route/home/home.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HomeComponent } from './route/home/home.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     LayoutModule,
     BrowserAnimationsModule
   ],
