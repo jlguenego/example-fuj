@@ -1,8 +1,5 @@
 .body {
     // 100% - 2 * mat-toolbar-single-row height
-    min-height: calc(100% - 112px)
-}
-
-.sidenav-container {
+    min-height: calc(100% - 112px);
     z-index: -1 !important;
 }

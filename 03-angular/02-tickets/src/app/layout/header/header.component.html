@@ -1,6 +1,9 @@
 <mat-toolbar color="primary" class="mat-elevation-z2">
-  <mat-icon>description</mat-icon>
-  <span>Tickets</span>
+  <a routerLink="" mat-button>
+    <mat-icon class="logo-color">description</mat-icon>
+    <i>Tickets!</i>
+  </a>
+
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
   <nav *ngIf="!(menu.isHandsetPortrait$ | async)">
