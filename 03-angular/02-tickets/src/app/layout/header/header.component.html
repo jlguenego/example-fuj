@@ -7,6 +7,9 @@
     <a routerLink="create" mat-button>Create a new ticket</a>
     <a routerLink="list" mat-button>All tickets</a>
   </nav>
-  <mat-icon *ngIf="isHandsetPortrait$ | async">menu</mat-icon>
+  <button (click)="menu.toggle()" mat-icon-button *ngIf="isHandsetPortrait$ | async">
+    <mat-icon>menu</mat-icon>
+  </button>
+
 </mat-toolbar>
 {{isHandsetPortrait$ | async}}
