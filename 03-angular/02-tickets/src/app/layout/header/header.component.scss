@@ -8,3 +8,8 @@
     color: hsl(120, 100%, 50%);
 }
 
+mat-toolbar {
+    position: relative;
+    z-index: 2;
+}
+
