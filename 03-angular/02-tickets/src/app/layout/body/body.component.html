@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav #snav mode="over" fixedInViewport fixedTopGap="56">
+    <mat-sidenav position="end" mode="over" fixedInViewport fixedTopGap="56">
         <mat-nav-list>
             <a mat-list-item routerLink="create">Create ticket</a>
             <a mat-list-item routerLink="list">list Ticket</a>
@@ -8,8 +8,8 @@
 
     <mat-sidenav-content>
         <router-outlet></router-outlet>
+        {{menu.isOpen}}
     </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-{{menu.isOpen}}
