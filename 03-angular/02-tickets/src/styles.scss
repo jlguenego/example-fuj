@@ -4,10 +4,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // added by me...
-
-.jumbo {
-    padding: 2em 0;
+.margin {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
 }
-.center {
-    text-align: center;
+
+.flex {
+    display: flex;
+    flex-direction: row;
 }

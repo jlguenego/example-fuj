@@ -1,17 +1,18 @@
 <mat-toolbar color="primary" class="mat-elevation-z2">
-  <a routerLink="" mat-button>
-    <mat-icon class="logo-color">description</mat-icon>
-    <i>Tickets!</i>
-  </a>
+  <div class="margin flex">
+    <a routerLink="" mat-button>
+      <mat-icon class="logo-color">description</mat-icon>
+      <i>Tickets!</i>
+    </a>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
-  <nav *ngIf="!(menu.isHandsetPortrait$ | async)">
-    <a routerLink="create" mat-button>Create a new ticket</a>
-    <a routerLink="list" mat-button>All tickets</a>
-  </nav>
-  <button (click)="menu.toggle()" mat-icon-button *ngIf="menu.isHandsetPortrait$ | async">
-    <mat-icon>menu</mat-icon>
-  </button>
-
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <nav *ngIf="!(menu.isHandsetPortrait$ | async)">
+      <a routerLink="create" mat-button>Create a new ticket</a>
+      <a routerLink="list" mat-button>All tickets</a>
+    </nav>
+    <button (click)="menu.toggle()" mat-icon-button *ngIf="menu.isHandsetPortrait$ | async">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
