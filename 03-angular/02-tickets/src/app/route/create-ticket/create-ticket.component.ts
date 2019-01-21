@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-ticket',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTicketComponent implements OnInit {
 
-  constructor() { }
+  ticketForm = this.fb.group({
+    title: [null, Validators.required],
+    description: [null, Validators.required],
+    dueDate: [null, Validators.required],
+    urgent: [null, Validators.required],
+    firstName: [null, Validators.required],
+  })
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('submit');
   }
 
 }

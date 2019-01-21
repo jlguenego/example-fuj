@@ -8,6 +8,7 @@ import { CreateTicketComponent } from './route/create-ticket/create-ticket.compo
 import { ListTicketComponent } from './route/list-ticket/list-ticket.component';
 import { HomeComponent } from './route/home/home.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     RouterModule,
     LayoutModule,
     BrowserAnimationsModule

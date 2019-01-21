@@ -1,8 +1,39 @@
 <main>
-    <section>
-      <div class="margin">
-        <h1>Create a new Ticket</h1>
-        
-      </div>
-    </section>
-  </main>
+  <section>
+    <div class="margin">
+      <h1>Create a new Ticket</h1>
+      <form [formGroup]="ticketForm" novalidate (ngSubmit)="onSubmit()" class="form">
+        <mat-card>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Title">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <textarea matInput rows="5" placeholder="Describe the issue"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Due date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-radio-group>
+            <mat-radio-button value="1">Urgent</mat-radio-button>
+            <mat-radio-button value="2">Nice to be done</mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="First name" formControlName="firstName">
+            <mat-error *ngIf="ticketForm.controls['firstName'].hasError('required')">
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card>
+      </form>
+      <app-essai-address></app-essai-address>
+    </div>
+  </section>
+</main>
