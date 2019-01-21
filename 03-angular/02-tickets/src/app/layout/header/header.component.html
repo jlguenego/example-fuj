@@ -3,9 +3,10 @@
   <span>Tickets</span>
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
-  <nav>
+  <nav *ngIf="!(isHandsetPortrait$ | async)">
     <a routerLink="create" mat-button>Create a new ticket</a>
     <a routerLink="list" mat-button>All tickets</a>
   </nav>
-
+  <mat-icon *ngIf="isHandsetPortrait$ | async">menu</mat-icon>
 </mat-toolbar>
+{{isHandsetPortrait$ | async}}
