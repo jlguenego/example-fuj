@@ -14,6 +14,7 @@ export class CreateTicketComponent implements OnInit {
     dueDate: [null, Validators.required],
     urgent: [null, Validators.required],
     firstName: [null, Validators.required],
+    lastName: [null, Validators.required],
   })
 
   constructor(private fb: FormBuilder) { }
