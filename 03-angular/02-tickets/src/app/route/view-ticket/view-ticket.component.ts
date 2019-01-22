@@ -18,7 +18,7 @@ export class ViewTicketComponent implements OnInit {
     this.route.params.subscribe(params => {
       const id = +params.id;
       this.ticket = this.tickets.get(id);
-    })
+    });
   }
 
 }

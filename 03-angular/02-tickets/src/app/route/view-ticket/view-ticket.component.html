@@ -8,7 +8,20 @@
       </p>
       <h2>Description</h2>
       <p>{{ticket.description}}</p>
-
+      <h2>Urgent ?</h2>
+      <p>
+        {{ticket.isUrgent ? 'Urgent' : 'Not urgent'}}
+      </p>
+      <h2>Project</h2>
+      <p>
+        {{ticket.project}}
+      </p>
+      <h2>Due date</h2>
+      <p>{{ticket.dueDate}}</p>
+      <h2>Author</h2>
+      <p>
+        {{ticket.firstName}} {{ticket.lastName | uppercase}}
+      </p>
     </div>
   </section>
 </main>
