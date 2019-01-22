@@ -44,4 +44,8 @@ export class TicketTableComponent implements OnInit {
   unHighlight(row: TicketRecord) {
     this.selectedRowIndexes.delete(row.id);
   }
+
+  delete() {
+    this.selectedRowIndexes.forEach(n => this.tickets.delete(n))
+  }
 }

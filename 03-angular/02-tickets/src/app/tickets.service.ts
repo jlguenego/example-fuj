@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TicketRecord } from './ticket.record';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,7 @@ export class TicketsService {
     ticket.id = this.nextId;
     return ticket;
   });
+  store$ = new BehaviorSubject(this.store);
 
   constructor(private router: Router) { }
 
@@ -42,6 +44,14 @@ export class TicketsService {
 
   get(id: number): TicketRecord {
     return this.store.find(n => n.id === id);
+  }
+
+  delete(id: number) {
+    console.log('delete', id);
+    const index = this.store.findIndex(n => n.id === id);
+    console.log('index', index);
+    this.store.splice(index, 1);
+    this.store$.next(this.store);
   }
 
   autoGenerate(): TicketRecord {
