@@ -23,6 +23,9 @@
               <mat-error *ngIf="ticketForm.controls['description'].hasError('required')">
                 Description is <strong>required</strong>
               </mat-error>
+              <mat-error *ngIf="ticketForm.controls['description'].hasError('minlength')">
+                Description must contain at least 20 characters.
+              </mat-error>
             </mat-form-field>
 
 
@@ -37,6 +40,16 @@
               <input matInput placeholder="Last name" formControlName="lastName" autocomplete="family-name">
               <mat-error *ngIf="ticketForm.controls['lastName'].hasError('required')">
                 Last name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input type="email" matInput placeholder="Email" formControlName="email" autocomplete="email">
+              <mat-error *ngIf="ticketForm.controls['email'].hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="ticketForm.controls['email'].hasError('email')">
+                Must be a valid email.
               </mat-error>
             </mat-form-field>
 
@@ -63,7 +76,10 @@
             </mat-radio-group>
           </mat-card-content>
           <mat-card-actions>
+            <button (click)="ticketForm.reset()" mat-raised-button type="reset">Reset</button>
+            <button (click)="autoGenerate()" mat-raised-button type="button">Autogenerate</button>
             <button [disabled]="ticketForm.invalid" mat-raised-button color="primary" type="submit">Submit</button>
+
           </mat-card-actions>
         </mat-card>
       </form>
