@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <button (click)="delete()" mat-button ><mat-icon>delete_forever</mat-icon>Delete</button>
+  <button [disabled]="selectedRowIndexes.size === 0" (click)="delete()" mat-button ><mat-icon>delete_forever</mat-icon>Delete</button>
 </mat-toolbar>
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">

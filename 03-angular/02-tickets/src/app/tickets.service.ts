@@ -22,7 +22,7 @@ export class TicketsService {
   ];
 
   nextId: number = 0;
-  store: TicketRecord[] = new Array(50).fill(0).map(n => {
+  store: TicketRecord[] = new Array(4).fill(0).map(n => {
     const ticket = this.autoGenerate();
     this.nextId++;
     ticket.id = this.nextId;

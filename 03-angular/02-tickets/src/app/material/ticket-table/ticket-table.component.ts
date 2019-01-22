@@ -18,7 +18,7 @@ export class TicketTableComponent implements OnInit {
   displayedColumns = ['check', 'dueDate', 'title', 'firstName', 'lastName'];
   selectedRowIndexes = new Set<number>();
 
-  constructor(private tickets: TicketsService) { }
+  constructor(public tickets: TicketsService) { }
 
   ngOnInit() {
     this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
@@ -47,6 +47,7 @@ export class TicketTableComponent implements OnInit {
 
   delete() {
     this.selectedRowIndexes.forEach(n => this.tickets.delete(n));
+    this.selectedRowIndexes.clear();
     this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
   }
 }
