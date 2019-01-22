@@ -15,7 +15,7 @@ export class TicketTableComponent implements OnInit {
   dataSource: TicketTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['dueDate', 'title', 'firstName', 'lastName'];
+  displayedColumns = ['check', 'dueDate', 'title', 'firstName', 'lastName'];
 
   constructor(private tickets: TicketsService) {}
 
