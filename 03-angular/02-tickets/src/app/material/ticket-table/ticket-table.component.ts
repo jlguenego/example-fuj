@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { TicketTableDataSource } from './ticket-table-datasource';
 import { TicketsService } from 'src/app/tickets.service';
+import { TicketRecord } from 'src/app/ticket.record';
 
 @Component({
   selector: 'app-ticket-table',
@@ -20,5 +21,9 @@ export class TicketTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
+  }
+
+  viewTicket(row: TicketRecord) {
+    alert('view ticket ' + row.title);
   }
 }

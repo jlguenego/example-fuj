@@ -1,4 +1,5 @@
 export interface TicketRecord {
+    id?: number;
     title: string;
     description: string;
     firstName: string;

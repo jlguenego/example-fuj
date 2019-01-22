@@ -20,16 +20,23 @@ export class TicketsService {
     { value: 'juridical', label: 'Juridical' },
   ];
 
-  store: TicketRecord[] = new Array(50).fill(0).map(n => this.autoGenerate());
+  nextId: number = 0;
+  store: TicketRecord[] = new Array(50).fill(0).map(n => {
+    const ticket = this.autoGenerate();
+    this.nextId++;
+    ticket.id = this.nextId;
+    return ticket;
+  });
 
   constructor() { }
 
   create(ticket: TicketRecord): Promise<void> {
-    this.store.push(ticket);
+    this.nextId++;
+    this.store.push({ id: this.nextId, ...ticket });
     return Promise.resolve();
   }
 
-  autoGenerate() {
+  autoGenerate(): TicketRecord {
     const n = Math.round(Math.random() * 1e6);
     const date = new Date();
     date.setDate(date.getDate() + n % 100);

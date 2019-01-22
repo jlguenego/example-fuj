@@ -25,7 +25,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr (click)="viewTicket(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
   <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="50" [pageSizeOptions]="[25, 50, 100, 250]">
