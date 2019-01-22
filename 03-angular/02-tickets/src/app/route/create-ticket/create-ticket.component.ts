@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { typeSourceSpan } from '@angular/compiler';
+import { TicketsService } from 'src/app/tickets.service';
 
 @Component({
   selector: 'app-create-ticket',
@@ -17,7 +18,8 @@ export class CreateTicketComponent implements OnInit {
     email: [null, Validators.compose([Validators.required, Validators.email])],
     project: [null, Validators.required],
     isUrgent: [false, Validators.required],
-    type: ['technical', Validators.required]
+    type: ['technical', Validators.required],
+    dueDate: [null, Validators.required],
   });
 
   hasUnitNumber = false;
@@ -36,17 +38,19 @@ export class CreateTicketComponent implements OnInit {
     { value: 'juridical', label: 'Juridical' },
   ]
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private tickets: TicketsService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    alert('Thanks!');
+    this.tickets.create(this.ticketForm.value);
   }
 
   autoGenerate() {
     const n = Math.round(Math.random() * 1e6);
+    const date = new Date();
+    date.setDate(date.getDate() + n % 100);
     this.ticketForm.setValue({
       title: `My nice ticket #${n}`,
       description: `This is the description of the tiket #${n}`,
@@ -55,7 +59,8 @@ export class CreateTicketComponent implements OnInit {
       email: `john.doe@tickets.io`,
       project: this.projects.map(n => n.value)[n % this.projects.length],
       isUrgent: n % 2 === 0,
-      type: this.types.map(n => n.value)[n % this.types.length]
+      type: this.types.map(n => n.value)[n % this.types.length],
+      dueDate: date,
     });
   }
 
