@@ -24,6 +24,6 @@ export class TicketTableComponent implements OnInit {
   }
 
   viewTicket(row: TicketRecord) {
-    alert('view ticket ' + row.title);
+    this.tickets.view(row.id);
   }
 }

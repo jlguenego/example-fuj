@@ -9,13 +9,15 @@ import { ListTicketComponent } from './route/list-ticket/list-ticket.component';
 import { HomeComponent } from './route/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewTicketComponent } from './route/view-ticket/view-ticket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateTicketComponent,
     ListTicketComponent,
-    HomeComponent
+    HomeComponent,
+    ViewTicketComponent
   ],
   imports: [
     BrowserModule,
