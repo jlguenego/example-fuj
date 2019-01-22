@@ -46,6 +46,7 @@ export class TicketTableComponent implements OnInit {
   }
 
   delete() {
-    this.selectedRowIndexes.forEach(n => this.tickets.delete(n))
+    this.selectedRowIndexes.forEach(n => this.tickets.delete(n));
+    this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
   }
 }
