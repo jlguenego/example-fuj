@@ -14,7 +14,8 @@ import {
   MatNativeDateModule,
   MatRadioModule,
   MatSelectModule,
-  MatCardModule
+  MatCardModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { EssaiAddressComponent } from './essai-address/essai-address.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatIconModule,
@@ -42,6 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatIconModule,
