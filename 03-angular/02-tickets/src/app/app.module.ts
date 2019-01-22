@@ -10,6 +10,7 @@ import { HomeComponent } from './route/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewTicketComponent } from './route/view-ticket/view-ticket.component';
+import { NotFoundComponent } from './route/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ViewTicketComponent } from './route/view-ticket/view-ticket.component';
     CreateTicketComponent,
     ListTicketComponent,
     HomeComponent,
-    ViewTicketComponent
+    ViewTicketComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
