@@ -20,6 +20,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
 }
 
+.padding-v {
+    padding: 1em 0;
+}
+
 .flex {
     display: flex;
     flex-direction: row;

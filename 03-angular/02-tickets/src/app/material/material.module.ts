@@ -15,13 +15,14 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatCardModule,
-  MatCheckboxModule
+  MatCheckboxModule, MatTableModule, MatPaginatorModule, MatSortModule
 } from '@angular/material';
 import { EssaiAddressComponent } from './essai-address/essai-address.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EssaiTableComponent } from './essai-table/essai-table.component';
 
 @NgModule({
-  declarations: [EssaiComponent, EssaiAddressComponent],
+  declarations: [EssaiComponent, EssaiAddressComponent, EssaiTableComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -39,6 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   exports: [
     LayoutModule,
@@ -57,6 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     EssaiComponent,
     EssaiAddressComponent,
+    EssaiTableComponent,
   ]
 })
 export class MaterialModule { }
