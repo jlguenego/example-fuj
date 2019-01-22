@@ -69,10 +69,7 @@
             </div>
 
             <mat-radio-group formControlName="type">
-              <mat-radio-button value="technical">Technical</mat-radio-button>
-              <mat-radio-button value="functional">Functional</mat-radio-button>
-              <mat-radio-button value="usability">Usability</mat-radio-button>
-              <mat-radio-button value="juridical">Juridical</mat-radio-button>
+              <mat-radio-button *ngFor="let type of types" [value]="type.value">{{type.label}}</mat-radio-button>
             </mat-radio-group>
           </mat-card-content>
           <mat-card-actions>
@@ -83,8 +80,6 @@
           </mat-card-actions>
         </mat-card>
       </form>
-
-      {{ticketForm.value | json}}
 
     </div>
   </section>
