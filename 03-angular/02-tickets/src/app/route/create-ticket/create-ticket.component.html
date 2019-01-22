@@ -55,7 +55,7 @@
 
             <mat-form-field class="full-width">
               <mat-select placeholder="Projects" formControlName="project">
-                <mat-option *ngFor="let project of projects" [value]="project.value">
+                <mat-option *ngFor="let project of tickets.projects" [value]="project.value">
                   {{ project.label }}
                 </mat-option>
               </mat-select>
@@ -69,7 +69,7 @@
             </div>
 
             <mat-radio-group formControlName="type">
-              <mat-radio-button *ngFor="let type of types" [value]="type.value">{{type.label}}</mat-radio-button>
+              <mat-radio-button *ngFor="let type of tickets.types" [value]="type.value">{{type.label}}</mat-radio-button>
             </mat-radio-group>
 
             <mat-form-field class="full-width short-width">

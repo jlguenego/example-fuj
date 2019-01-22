@@ -63,6 +63,7 @@ import { TicketTableComponent } from './ticket-table/ticket-table.component';
     EssaiComponent,
     EssaiAddressComponent,
     EssaiTableComponent,
+    TicketTableComponent,
   ]
 })
 export class MaterialModule { }

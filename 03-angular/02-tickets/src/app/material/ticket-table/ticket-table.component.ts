@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { TicketTableDataSource } from './ticket-table-datasource';
+import { TicketsService } from 'src/app/tickets.service';
 
 @Component({
   selector: 'app-ticket-table',
@@ -13,9 +14,11 @@ export class TicketTableComponent implements OnInit {
   dataSource: TicketTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['dueDate', 'title', 'firstName', 'lastName'];
+
+  constructor(private tickets: TicketsService) {}
 
   ngOnInit() {
-    this.dataSource = new TicketTableDataSource(this.paginator, this.sort);
+    this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
   }
 }
