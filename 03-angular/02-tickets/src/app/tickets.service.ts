@@ -33,11 +33,13 @@ export class TicketsService {
     const n = Math.round(Math.random() * 1e6);
     const date = new Date();
     date.setDate(date.getDate() + n % 100);
+    const firstnames = ['John', 'Andrew', 'Trevor', 'Mark', 'Simon', 'Josef', 'Kirk'];
+    const lastnames = ['Doe', 'Greenwood', 'Everden', 'Hall', 'Patrick'];
     return {
       title: `My nice ticket #${n}`,
       description: `This is the description of the tiket #${n}`,
-      firstName: `John`,
-      lastName: `Doe`,
+      firstName: firstnames[n % firstnames.length],
+      lastName: lastnames[n % lastnames.length],
       email: `john.doe@tickets.io`,
       project: this.projects.map(n => n.value)[n % this.projects.length],
       isUrgent: n % 2 === 0,
