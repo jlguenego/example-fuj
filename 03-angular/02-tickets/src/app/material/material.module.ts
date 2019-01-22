@@ -20,9 +20,10 @@ import {
 import { EssaiAddressComponent } from './essai-address/essai-address.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EssaiTableComponent } from './essai-table/essai-table.component';
+import { TicketTableComponent } from './ticket-table/ticket-table.component';
 
 @NgModule({
-  declarations: [EssaiComponent, EssaiAddressComponent, EssaiTableComponent],
+  declarations: [EssaiComponent, EssaiAddressComponent, EssaiTableComponent, TicketTableComponent],
   imports: [
     CommonModule,
     LayoutModule,
