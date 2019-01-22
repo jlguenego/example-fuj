@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { typeSourceSpan } from '@angular/compiler';
 import { TicketsService } from 'src/app/tickets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-ticket',
@@ -38,13 +39,13 @@ export class CreateTicketComponent implements OnInit {
     { value: 'juridical', label: 'Juridical' },
   ]
 
-  constructor(private fb: FormBuilder, private tickets: TicketsService) { }
+  constructor(private fb: FormBuilder, private tickets: TicketsService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.tickets.create(this.ticketForm.value);
+    this.tickets.create(this.ticketForm.value).then(() => this.router.navigate(['/list']));
   }
 
   autoGenerate() {

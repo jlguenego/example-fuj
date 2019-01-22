@@ -16,9 +16,13 @@ interface TicketRecord {
   providedIn: 'root'
 })
 export class TicketsService {
+  
+  store: TicketRecord[] = [];
+  
   constructor() { }
 
-  create(value: any): any {
-    throw new Error("Method not implemented.");
+  create(ticket: TicketRecord): Promise<void> {
+    this.store.push(ticket);
+    return Promise.resolve();
   }
 }
