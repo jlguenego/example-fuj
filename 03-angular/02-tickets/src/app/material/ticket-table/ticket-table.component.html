@@ -14,25 +14,25 @@
     <!-- dueDate Column -->
     <ng-container matColumnDef="dueDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Due Date</th>
-      <td (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.dueDate}}</td>
+      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.dueDate}}</td>
     </ng-container>
 
     <!-- title Column -->
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
-      <td (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.title}}</td>
+      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.title}}</td>
     </ng-container>
 
     <!-- firstName Column -->
     <ng-container matColumnDef="firstName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Firstname</th>
-      <td (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.firstName}}</td>
+      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.firstName}}</td>
     </ng-container>
 
     <!-- lastName Column -->
     <ng-container matColumnDef="lastName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Lastname</th>
-      <td (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.lastName}}</td>
+      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.lastName}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
