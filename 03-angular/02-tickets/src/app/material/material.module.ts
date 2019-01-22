@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EssaiComponent } from './essai/essai.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatToolbarModule,
@@ -17,13 +16,11 @@ import {
   MatCardModule,
   MatCheckboxModule, MatTableModule, MatPaginatorModule, MatSortModule
 } from '@angular/material';
-import { EssaiAddressComponent } from './essai-address/essai-address.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EssaiTableComponent } from './essai-table/essai-table.component';
 import { TicketTableComponent } from './ticket-table/ticket-table.component';
 
 @NgModule({
-  declarations: [EssaiComponent, EssaiAddressComponent, EssaiTableComponent, TicketTableComponent],
+  declarations: [TicketTableComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -60,9 +57,6 @@ import { TicketTableComponent } from './ticket-table/ticket-table.component';
     MatSelectModule,
     MatSidenavModule,
     MatToolbarModule,
-    EssaiComponent,
-    EssaiAddressComponent,
-    EssaiTableComponent,
     TicketTableComponent,
   ]
 })
