@@ -14,7 +14,6 @@ export class CreateTicketComponent implements OnInit {
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
     address: [null, Validators.required],
-    address2: null,
     city: [null, Validators.required],
     state: [null, Validators.required],
     postalCode: [null, Validators.compose([
