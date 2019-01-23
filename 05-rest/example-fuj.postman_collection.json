@@ -1,0 +1,64 @@
+{
+	"variables": [],
+	"info": {
+		"name": "example-fuj",
+		"_postman_id": "d71832fe-79a8-4669-b964-1dad3a6a55c3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/ws/add with urlencoded method",
+			"request": {
+				"url": "http://localhost:9000/ws/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "a",
+							"value": "12",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "b",
+							"value": "13",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/add json method",
+			"request": {
+				"url": "http://localhost:9000/ws/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"a\": 45, \"b\": 32 }"
+				},
+				"description": "JSON method (recommended)"
+			},
+			"response": []
+		}
+	]
+}
