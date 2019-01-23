@@ -21,7 +21,9 @@ export class TicketTableComponent implements OnInit {
   constructor(public tickets: TicketsService) { }
 
   ngOnInit() {
-    this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
+    this.tickets.store$.subscribe(store => {
+      this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
+    });
   }
 
   viewTicket(row: TicketRecord) {
@@ -48,6 +50,5 @@ export class TicketTableComponent implements OnInit {
   delete() {
     this.selectedRowIndexes.forEach(n => this.tickets.delete(n));
     this.selectedRowIndexes.clear();
-    this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
   }
 }

@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+const endpoint = environment.domain + '/ws/tickets';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,18 +36,22 @@ export class TicketsRestService {
   }
 
   retrieveAll() {
-    this.http.get(environment.domain + '/ws/tickets').subscribe({
-      next: data => {
-        this.store = data['content'];
-      },
-      error: e => console.error('error', e)
-    });
+    return this.http.get(endpoint).toPromise().then(data => {
+      console.log('data', data);
+      this.store = data['content'].map(ticket => {
+        const newTicket = { ...ticket };
+        newTicket.id = newTicket._id;
+        delete newTicket._id;
+        return newTicket;
+      });
+      this.store$.next(this.store);
+    }).catch(e => console.error('error', e));
   }
 
   create(ticket: TicketRecord): Promise<void> {
-    this.nextId++;
-    this.store.push({ id: this.nextId, ...ticket });
-    return Promise.resolve();
+    return this.http.post(endpoint, ticket).toPromise().then(data => {
+      return this.retrieveAll();
+    });
   }
 
   view(id) {
@@ -58,10 +64,11 @@ export class TicketsRestService {
 
   delete(id: number) {
     console.log('delete', id);
-    const index = this.store.findIndex(n => n.id === id);
-    console.log('index', index);
-    this.store.splice(index, 1);
-    this.store$.next(this.store);
+    return this.http.delete(endpoint + '/' + id).toPromise().then(data => {
+      return this.retrieveAll();
+    }).then(() => {
+      this.store$.next(this.store);
+    }).catch(e => console.error('error', e))
   }
 
   autoGenerate(): TicketRecord {
