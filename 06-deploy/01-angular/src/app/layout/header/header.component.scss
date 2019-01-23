@@ -1,0 +1,19 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+.logo-color {
+    color: hsl(120, 100%, 50%);
+}
+
+mat-toolbar {
+    position: relative;
+    z-index: 2;
+}
+
+.margin.header {
+    padding: 0;
+}
+
