@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "example-fuj",
-		"_postman_id": "d71832fe-79a8-4669-b964-1dad3a6a55c3",
+		"_postman_id": "cb8edb22-6c33-b0eb-0e6f-9885f4ed0c8b",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -57,6 +57,37 @@
 					"raw": "{ \"a\": 45, \"b\": 32 }"
 				},
 				"description": "JSON method (recommended)"
+			},
+			"response": []
+		},
+		{
+			"name": "list all tickets",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create ticket",
+			"request": {
+				"url": "http://localhost:9000/ws/tickets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"asdf\"\n}"
+				},
+				"description": ""
 			},
 			"response": []
 		}
