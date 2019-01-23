@@ -10,6 +10,9 @@ import { HomeComponent } from './route/home/home.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewTicketComponent } from './route/view-ticket/view-ticket.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TicketsService } from './tickets.service';
+import { TicketsRestService } from './tickets-rest.service';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,13 @@ import { ViewTicketComponent } from './route/view-ticket/view-ticket.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
     LayoutModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: TicketsService, useClass: TicketsRestService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
