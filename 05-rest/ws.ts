@@ -45,18 +45,25 @@ const User = mongoose.model('User',
 			strict: false, // allow other field to be saved in MongoDB.
 		}));
 
-async function connect() {
-	try {
-		await mongoose.connect(
-			'mongodb://localhost/rest-db',
-			{ useNewUrlParser: true, useCreateIndex: true });
-		console.log('connected to MongoDB.');
-	} catch (e) {
-		console.log('error while connecting to MongoDB.', e.message);
-		process.exit(1);
-	}
-}
-connect();
+const url = 'mongodb://mongo/rest-db';
+const options = {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+};
+
+const connectWithRetry = () => {
+	mongoose.connect(url, options, err => {
+		if (err) {
+			console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+			setTimeout(connectWithRetry, 5000);
+			return;
+		}
+		console.log('Successfully connected to MongoDB')
+	});
+};
+setTimeout(connectWithRetry, 2000);
+
+
 
 const resources = [{ model: Ticket, rest: 'tickets' }, { model: User, rest: 'users' }];
 
