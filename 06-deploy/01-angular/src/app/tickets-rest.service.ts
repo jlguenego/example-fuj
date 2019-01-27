@@ -45,7 +45,10 @@ export class TicketsRestService {
         return newTicket;
       });
       this.store$.next(this.store);
-    }).catch(e => console.error('error', e));
+    }).catch(e => {
+      console.error('error', e);
+      this.store$.error(this.store);
+    });
   }
 
   create(ticket: TicketRecord): Promise<void> {

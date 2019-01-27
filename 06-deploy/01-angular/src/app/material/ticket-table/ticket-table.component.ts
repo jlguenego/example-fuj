@@ -21,8 +21,13 @@ export class TicketTableComponent implements OnInit {
   constructor(public tickets: TicketsService) { }
 
   ngOnInit() {
-    this.tickets.store$.subscribe(store => {
-      this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
+    this.tickets.store$.subscribe({
+      next: store => {
+        this.dataSource = new TicketTableDataSource(this.paginator, this.sort, this.tickets);
+      },
+      error: store => {
+        window.alert('error while loading ticket. Is server alive ?');
+      }
     });
   }
 
