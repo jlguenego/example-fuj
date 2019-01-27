@@ -1,0 +1,5 @@
+# Ignore everything
+www/*
+
+# But not these files...
+!www/essai.txt
