@@ -7,7 +7,7 @@
     "build": "cd ../01-angular && ng build --prod",
     "docker": "docker-compose up --build",
     "start": "npm run build && npm run docker",
-    "build-jlg": "cd ../01-angular && ng build --configuration=jlg",
+    "build-jlg": "cd ../01-angular && npx ng build --configuration=jlg",
     "docker-jlg": "docker-compose -f docker-compose-jlg.yml up --build",
     "start-jlg": "npm run build-jlg && npm run docker-jlg"
   },
