@@ -30,7 +30,9 @@ export class CreateTicketComponent implements OnInit {
   }
 
   onSubmit() {
-    this.tickets.create(this.ticketForm.value).then(() => this.router.navigate(['/list']));
+    this.tickets.create(this.ticketForm.value)
+      .then(() => this.router.navigate(['/list']))
+      .catch(error => window.alert('error while creating ticket'));
   }
 
   autoGenerate() {
