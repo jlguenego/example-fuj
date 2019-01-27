@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "image": "docker build -t jlguenego/example-fuj .",
+    "image": "docker build -t jlguenego/example-fuj ../.. -f Dockerfile",
     "run": "docker run -p 49160:9000 -d jlguenego/example-fuj"
   },
   "keywords": [],
