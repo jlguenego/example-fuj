@@ -14,7 +14,7 @@
     <!-- dueDate Column -->
     <ng-container matColumnDef="dueDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Due Date</th>
-      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.dueDate}}</td>
+      <td class="clickable" (click)="viewTicket(row)" mat-cell *matCellDef="let row">{{row.dueDate | date : 'MM / dd / yyyy'}}</td>
     </ng-container>
 
     <!-- title Column -->

@@ -13,3 +13,10 @@
     display: block;
     margin: 1em 0;
 }
+
+.actions {
+    line-height: 3em;
+    button:first-child {
+        margin: 0 8px;
+    }
+}
