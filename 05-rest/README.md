@@ -1,4 +1,4 @@
-# Express Server
+# Express Server in local
 
 This express server connect to a mongodb (localhost:27017).
 
@@ -65,5 +65,10 @@ The file to import is :
 
 ```
 npm run express
+```
+
+Then open chrome in :
+```
+http://localhost:9000
 ```
 

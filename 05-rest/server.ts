@@ -10,8 +10,11 @@ const app = express();
 app.use('/ws', ws);
 app.use(express.static('www'));
 app.use(serveIndex('www', { icons: true }));
-app.listen(port, () => console.log('Server started on port', port));
 
-new HTTPSServer().start(9443, app);
+const status = new HTTPSServer().start(9443, 9000, app);
 
+if (!status) {
+    // HTTP Only.
+    app.listen(port, () => console.log('Server started on port', port));
+}
 
