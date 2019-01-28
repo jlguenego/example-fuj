@@ -26,7 +26,7 @@ app.post('/add', (req, res) => {
 	res.json({ result: +req.body.a + +req.body.b });
 });
 
-
+// MongoDB REST
 const Ticket = mongoose.model('Ticket',
 	new mongoose.Schema({
 		// number: { type: String, required: true, unique: true, index: true },
@@ -45,7 +45,8 @@ const User = mongoose.model('User',
 			strict: false, // allow other field to be saved in MongoDB.
 		}));
 
-const url = 'mongodb://mongo/rest-db';
+const host = process.argv[2] || 'localhost';
+const url = `mongodb://${host}/rest-db`;
 const options = {
 	useNewUrlParser: true,
 	useCreateIndex: true,
@@ -61,9 +62,8 @@ const connectWithRetry = () => {
 		console.log('Successfully connected to MongoDB')
 	});
 };
+
 setTimeout(connectWithRetry, 2000);
-
-
 
 const resources = [{ model: Ticket, rest: 'tickets' }, { model: User, rest: 'users' }];
 
