@@ -37,6 +37,30 @@ To start Mongo:
 npm run docker:mongo
 ```
 
+### Setup HTTPS locally
+
+The purpose is to allow HTTPS running in development.
+We create a fake certificate for domain name  `localhost`.
+
+To create the fake certificate, open a bash.
+```
+$ cd ./config-https
+$ bash getCA.sh
+```
+
+Follow the questions.
+
+It will create an `./config-https/out` directory with the HTTPS certificates.
+
+#### Running on Chrome
+
+You install the RA Certificate in you google chrome in the "Manage Certificates" > "Trusted Root Certification Authorities".
+The file to import is :
+```
+./config-https/out/rootCA.pem
+```
+
+
 ### Start the express server
 
 ```
