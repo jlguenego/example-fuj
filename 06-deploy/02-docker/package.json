@@ -6,11 +6,11 @@
   "scripts": {
     "build": "cd ../01-angular && npm i && npx ng build --configuration=docker",
     "https": "node https.js docker",
-    "docker": "docker-compose -f docker-compose.docker.yml up --build -d",
+    "docker": "docker-compose -f docker-compose.docker.yml up --build",
     "deploy": "npm run build && npm run https && npm run docker",
     "build-jlg": "cd ../01-angular && npm i && npx ng build --configuration=jlg",
     "https-jlg" : "node https.js jlg",
-    "docker-jlg": "docker-compose -f docker-compose.jlg.yml up --build -d",
+    "docker-jlg": "docker-compose -f docker-compose.jlg.yml up --build",
     "deploy-jlg": "npm run build-jlg && npm run https-jlg && npm run docker-jlg"
   },
   "keywords": [],
