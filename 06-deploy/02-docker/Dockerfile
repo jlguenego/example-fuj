@@ -15,8 +15,8 @@ RUN npm install --only=production
 # Bundle app source
 COPY . .
 
-RUN mkdir -p /usr/src/certificate
-VOLUME [ "/usr/src/certificate" ]
+RUN mkdir -p /etc/letsencrypt
+VOLUME [ "/etc/letsencrypt" ]
 
 EXPOSE 9000 9443
 CMD [ "npm", "run", "docker:express" ]
