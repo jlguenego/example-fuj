@@ -4,8 +4,8 @@ services:
     container_name: express
     restart: always
     build: 
-      context: ../..
-      dockerfile: ./06-deploy/02-docker/Dockerfile.jlg
+      context: ../../05-rest
+      dockerfile: ./../06-deploy/02-docker/Dockerfile
     ports:
       - "20000:9000"
       - "20443:9443"
