@@ -2,12 +2,13 @@ version: "3"
 services:
   express:
     container_name: express
-    restart: always
+    restart: no
     build: 
       context: ../..
       dockerfile: ./06-deploy/02-docker/Dockerfile.jlg
     ports:
       - "20000:9000"
+      - "20443:9443"
     links:
       - mongo
   mongo:

@@ -2,7 +2,11 @@
 const fs = require('fs');
 const path = require('path');
 
+const target = process.argv[2];
+
+console.log('target', target);
+
 fs.copyFileSync(
-    path.resolve(__dirname, '../../05-rest/config.docker.ts'),
+    path.resolve(__dirname, `../../05-rest/config.${target}.ts`),
     path.resolve(__dirname, '../../05-rest/config.ts'),
 );

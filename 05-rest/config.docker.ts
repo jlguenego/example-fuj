@@ -1,6 +1,7 @@
 import * as path from 'path';
 
 export const config = {
-    keyFile: path.resolve('/certificates/privkey.pem'),
-    crtFile: path.resolve('/certificates/fullchain.pem'),
+    keyFile: path.resolve(__dirname, './config-https/out/server.key'),
+    crtFile: path.resolve(__dirname, './config-https/out/server.crt'),
+    hostHttpsPort: 443
 };

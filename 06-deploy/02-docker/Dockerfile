@@ -16,4 +16,4 @@ RUN npm install --only=production
 COPY . .
 
 EXPOSE 9000 9443
-CMD [ "npm", "docker:express" ]
+CMD [ "npm", "run", "docker:express" ]

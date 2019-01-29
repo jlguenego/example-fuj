@@ -12,6 +12,7 @@ export class HTTPSServer {
     start(httpsPort: number, httpPort: number, app: RequestListener): boolean {
         const keyFile = config.keyFile;
         const crtFile = config.crtFile;
+        const hostHttpsPort = config.hostHttpsPort || httpsPort;
         const foundCertificate = fs.existsSync(keyFile) && fs.existsSync(crtFile);
         if (!foundCertificate) {
             console.log('Certificate not found. Cannot start HTTPS Server');
@@ -33,7 +34,7 @@ export class HTTPSServer {
             const host = req.headers['host'].replace(/:.*$/, '');
             console.log('host', host);
             res.writeHead(301, { 
-                Location: `https://${host}:${httpsPort}${req.url}`,
+                Location: `https://${host}:${hostHttpsPort}${req.url}`,
              });
             res.end();
         }).listen(httpPort, () => {

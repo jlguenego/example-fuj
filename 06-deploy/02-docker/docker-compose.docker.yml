@@ -7,7 +7,8 @@ services:
       context: ../../05-rest
       dockerfile: ./../06-deploy/02-docker/Dockerfile
     ports:
-      - "49160:9000"
+      - "80:9000"
+      - "443:9443"
     links:
       - mongo
   mongo:
