@@ -6,15 +6,14 @@ WORKDIR /usr/src/http-server
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY 05-rest/package*.json ./
+COPY package*.json ./
 
 RUN npm install --only=production
 # If you are building your code for production
 # RUN npm install --only=production
 
 # Bundle app source
-COPY 05-rest/*.ts .
-COPY 05-rest/tsconfig.json .
+COPY . .
 
 EXPOSE 9000 9443
-CMD [ "npm", "docker-compose:express" ]
+CMD [ "npm", "docker:express" ]
