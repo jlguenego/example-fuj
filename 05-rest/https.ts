@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as http from 'http';
 import * as https from 'https';
 
-import { config } from 'config';
+import { config } from './config';
 
 type RequestListener = (
     req: import("http").IncomingMessage,

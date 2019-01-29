@@ -7,10 +7,10 @@
     "build": "cd ../01-angular && npm i && npx ng build --configuration=docker",
     "https": "node https.js",
     "docker": "docker-compose -f docker-compose.docker.yml up --build",
-    "start": "npm run build && npm run docker",
+    "start": "npm run build && npm run https && npm run docker",
     "build-jlg": "cd ../01-angular && npm i && npx ng build --configuration=jlg",
     "docker-jlg": "docker-compose -f docker-compose.jlg.yml up --build",
-    "start-jlg": "npm run build-jlg && npm run docker-jlg"
+    "start-jlg": "npm run build-jlg && npm run https && npm run docker-jlg"
   },
   "keywords": [],
   "author": "",
