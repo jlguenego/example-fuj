@@ -30,30 +30,30 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "aot": true,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }
+            ]
           },
           "configurations": {
-            "production": {
+            "docker": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "with": "src/environments/environment.docker.ts"
                 }
               ]
             },
@@ -63,22 +63,6 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.jlg.ts"
                 }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
               ]
             },
             "local": {
@@ -87,21 +71,13 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.local.ts"
                 }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
+              ]
+            },
+            "local-http": {
+              "fileReplacements": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local-http.ts"
                 }
               ]
             }

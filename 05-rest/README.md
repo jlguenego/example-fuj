@@ -2,6 +2,8 @@
 
 This express server connect to a mongodb (localhost:27017).
 
+It also have a HTTPS protocol.
+
 It is good to use a docker for mongodb but not required.
 
 # Deployment
@@ -13,7 +15,6 @@ Install docker on your platform.
 Build the angular app with `local` configuration.
 
 ### Build Angular app
-
 
 ```
 cd 06-deploy
@@ -64,11 +65,16 @@ The file to import is :
 ### Start the express server
 
 ```
-npm run express
+npm start
 ```
 
 Then open chrome in :
 ```
 http://localhost:9000
 ```
+
+Test if listing and creating tickets are working.
+
+### Author
+Jean-Louis GUENEGO @2019
 

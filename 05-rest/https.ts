@@ -32,8 +32,9 @@ export class HTTPSServer {
             console.log('req.url', req.url);
             const host = req.headers['host'].replace(/:.*$/, '');
             console.log('host', host);
-
-            res.writeHead(301, { Location: `https://${host}:${httpsPort}${req.url}` });
+            res.writeHead(301, { 
+                Location: `https://${host}:${httpsPort}${req.url}`,
+             });
             res.end();
         }).listen(httpPort, () => {
             console.log('HTTP server (redirect) started on port ' + httpPort);

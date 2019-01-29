@@ -5,9 +5,9 @@ services:
     restart: always
     build: 
       context: ../..
-      dockerfile: ./06-deploy/02-docker/Dockerfile
+      dockerfile: ./06-deploy/02-docker/Dockerfile.local
     ports:
-      - "20000:9000"
+      - "49160:9000"
     links:
       - mongo
   mongo:

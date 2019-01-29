@@ -7,8 +7,8 @@
     "docker:prune": "docker container prune --force && docker volume prune --force",
     "docker:mongodata": "docker volume create mongodata",
     "docker:mongo": "docker run -d -p 27017:27017 -v mongodata:/data/db mongo",
-    "express": "nodemon --watch ./**/*.ts --exec ts-node server.ts localhost",
-    "docker-compose:express": "nodemon --watch ./**/*.ts --exec ts-node server.ts mongo"
+    "start": "nodemon --watch ./**/*.ts --exec ts-node server.ts localhost",
+    "docker:express": "nodemon --watch ./**/*.ts --exec ts-node server.ts mongo"
   },
   "keywords": [],
   "author": "",

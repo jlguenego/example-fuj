@@ -13,7 +13,8 @@ RUN npm install --only=production
 # RUN npm install --only=production
 
 # Bundle app source
-COPY 05-rest .
+COPY 05-rest/*.ts .
+COPY 05-rest/tsconfig.json .
 
-EXPOSE 9000
-CMD [ "npm", "start" ]
+EXPOSE 9000 9443
+CMD [ "npm", "docker-compose:express" ]
