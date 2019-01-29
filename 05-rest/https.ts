@@ -1,7 +1,8 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import * as http from 'http';
 import * as https from 'https';
+
+import { config } from 'config';
 
 type RequestListener = (
     req: import("http").IncomingMessage,
@@ -9,9 +10,8 @@ type RequestListener = (
 
 export class HTTPSServer {
     start(httpsPort: number, httpPort: number, app: RequestListener): boolean {
-        const directory = path.resolve(__dirname, './config-https/out');
-        const keyFile = path.resolve(directory, 'server.key');
-        const crtFile = path.resolve(directory, 'server.crt');
+        const keyFile = config.keyFile;
+        const crtFile = config.crtFile;
         const foundCertificate = fs.existsSync(keyFile) && fs.existsSync(crtFile);
         if (!foundCertificate) {
             console.log('Certificate not found. Cannot start HTTPS Server');

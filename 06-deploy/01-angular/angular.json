@@ -49,6 +49,22 @@
             ]
           },
           "configurations": {
+            "local-http": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local-http.ts"
+                }
+              ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
             "docker": {
               "fileReplacements": [
                 {
@@ -62,22 +78,6 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.jlg.ts"
-                }
-              ]
-            },
-            "local": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local.ts"
-                }
-              ]
-            },
-            "local-http": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local-http.ts"
                 }
               ]
             }
