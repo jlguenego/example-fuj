@@ -15,5 +15,7 @@ RUN npm install --only=production
 # Bundle app source
 COPY . .
 
+VOLUME [ "/certificates" ]
+
 EXPOSE 9000 9443
 CMD [ "npm", "run", "docker:express" ]

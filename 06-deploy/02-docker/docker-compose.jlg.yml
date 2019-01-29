@@ -11,6 +11,8 @@ services:
       - "20443:9443"
     links:
       - mongo
+    volumes:
+      - /etc/letsencrypt/live/vps.jlg-consulting.com:/certificates
   mongo:
     container_name: mongo
     image: mongo
