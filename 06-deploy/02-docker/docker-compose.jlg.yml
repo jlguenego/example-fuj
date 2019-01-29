@@ -12,7 +12,7 @@ services:
     links:
       - mongo
     volumes:
-      - /etc/letsencrypt/live/vps.jlg-consulting.com:/certificates
+      - /etc/letsencrypt/live/vps.jlg-consulting.com:/certificate
   mongo:
     container_name: mongo
     image: mongo
